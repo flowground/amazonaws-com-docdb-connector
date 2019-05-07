@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) Amazon DocumentDB with MongoDB compatibility MSP Connector
+# ![LOGO](logo.png) Amazon DocumentDB with MongoDB compatibility **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the Amazon DocumentDB with MongoDB compatibility API (version 2014-10-31).
+A generated **flow**ground connector for the Amazon DocumentDB with MongoDB compatibility API (version 2014-10-31).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/docdb/2014-10-31/swagger.json<br/>
-Generated at: 2019-05-07T11:15:44+03:00
+Generated at: 2019-05-07T17:35:22+03:00
 
 ## API Description
 
@@ -526,7 +526,7 @@ Supported authorization schemes:
 
 ## License
 
-flowground :- Telekom iPaaS / amazonaws-com-docdb-connector<br/>
+**flow**ground :- Telekom iPaaS / amazonaws-com-docdb-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
