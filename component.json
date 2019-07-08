@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "AddTagsToResource": {
             "main": "./lib/actions/AddTagsToResource.js",
-            "title": "Adds metadata tags to an Amazon DocumentDB resource. You can use these tags with cost allocation reporting to track costs that are associated with Amazon DocumentDB resources. or in a <code>Condition</code> statement in an AWS Identity and Access Management (IAM) policy for Amazon DocumentDB.",
+            "title": "AddTagsToResource",
             "description": "Adds metadata tags to an Amazon DocumentDB resource. You can use these tags with cost allocation reporting to track costs that are associated with Amazon DocumentDB resources. or in a <code>Condition</code> statement in an AWS Identity and Access Management (IAM) policy for Amazon DocumentDB.",
             "fields": {
                 "verbose": {
@@ -55,7 +55,7 @@
         },
         "ApplyPendingMaintenanceAction": {
             "main": "./lib/actions/ApplyPendingMaintenanceAction.js",
-            "title": "Applies a pending maintenance action to a resource (for example, to a DB instance).",
+            "title": "ApplyPendingMaintenanceAction",
             "description": "Applies a pending maintenance action to a resource (for example, to a DB instance).",
             "fields": {
                 "verbose": {
@@ -72,7 +72,7 @@
         },
         "CopyDBClusterParameterGroup": {
             "main": "./lib/actions/CopyDBClusterParameterGroup.js",
-            "title": "Copies the specified DB cluster parameter group.",
+            "title": "CopyDBClusterParameterGroup",
             "description": "Copies the specified DB cluster parameter group.",
             "fields": {
                 "verbose": {
@@ -89,8 +89,8 @@
         },
         "CopyDBClusterSnapshot": {
             "main": "./lib/actions/CopyDBClusterSnapshot.js",
-            "title": "<p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.</p> <p>To cancel the copy operation after it is in progress, delete the target DB cluster snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in the <i>copying</i> status.</p>",
-            "description": "<p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.</p> <p>To cancel the copy operation after it is in progress, delete the target DB cluster snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in the <i>copying</i> status.</p>",
+            "title": "CopyDBClusterSnapshot",
+            "description": "Copies a snapshot of a DB cluster.\n\nTo copy a DB cluster snapshot from a shared manual DB cluster snapshot, \nSourceDBClusterSnapshotIdentifier must be the Amazon Resource Name (ARN) of the\nshared DB cluster snapshot.\n\nTo cancel the copy operation after it is in progress, delete the target DB\ncluster snapshot identified by TargetDBClusterSnapshotIdentifier while that DB\ncluster snapshot is in the copying status.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -106,7 +106,7 @@
         },
         "CreateDBCluster": {
             "main": "./lib/actions/CreateDBCluster.js",
-            "title": "Creates a new Amazon DocumentDB DB cluster.",
+            "title": "CreateDBCluster",
             "description": "Creates a new Amazon DocumentDB DB cluster.",
             "fields": {
                 "verbose": {
@@ -123,8 +123,8 @@
         },
         "CreateDBClusterParameterGroup": {
             "main": "./lib/actions/CreateDBClusterParameterGroup.js",
-            "title": "<p>Creates a new DB cluster parameter group.</p> <p>Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.</p> <p>A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after you create it. After you create a DB cluster parameter group, you must associate it with your DB cluster. For the new DB cluster parameter group and associated settings to take effect, you must then reboot the DB instances in the DB cluster without failover.</p> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This step is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter.</p> </important>",
-            "description": "<p>Creates a new DB cluster parameter group.</p> <p>Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.</p> <p>A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after you create it. After you create a DB cluster parameter group, you must associate it with your DB cluster. For the new DB cluster parameter group and associated settings to take effect, you must then reboot the DB instances in the DB cluster without failover.</p> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This step is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter.</p> </important>",
+            "title": "CreateDBClusterParameterGroup",
+            "description": "Creates a new DB cluster parameter group.\n\nParameters in a DB cluster parameter group apply to all of the instances in a DB\ncluster.\n\nA DB cluster parameter group is initially created with the default parameters\nfor the database engine used by instances in the DB cluster. To provide custom\nvalues for any of the parameters, you must modify the group after you create it.\nAfter you create a DB cluster parameter group, you must associate it with your\nDB cluster. For the new DB cluster parameter group and associated settings to\ntake effect, you must then reboot the DB instances in the DB cluster without\nfailover.\n\nAfter you create a DB cluster parameter group, you should wait at least 5\nminutes before creating your first DB cluster that uses that DB cluster\nparameter group as the default parameter group. This allows Amazon DocumentDB to\nfully complete the create action before the DB cluster parameter group is used\nas the default for a new DB cluster. This step is especially important for\nparameters that are critical when creating the default database for a DB\ncluster, such as the character set for the default database defined by the \ncharacter_set_database parameter.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -140,7 +140,7 @@
         },
         "CreateDBClusterSnapshot": {
             "main": "./lib/actions/CreateDBClusterSnapshot.js",
-            "title": "Creates a snapshot of a DB cluster. ",
+            "title": "CreateDBClusterSnapshot",
             "description": "Creates a snapshot of a DB cluster. ",
             "fields": {
                 "verbose": {
@@ -157,7 +157,7 @@
         },
         "CreateDBInstance": {
             "main": "./lib/actions/CreateDBInstance.js",
-            "title": "Creates a new DB instance.",
+            "title": "CreateDBInstance",
             "description": "Creates a new DB instance.",
             "fields": {
                 "verbose": {
@@ -174,7 +174,7 @@
         },
         "CreateDBSubnetGroup": {
             "main": "./lib/actions/CreateDBSubnetGroup.js",
-            "title": "Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two Availability Zones in the AWS Region.",
+            "title": "CreateDBSubnetGroup",
             "description": "Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two Availability Zones in the AWS Region.",
             "fields": {
                 "verbose": {
@@ -191,8 +191,8 @@
         },
         "DeleteDBCluster": {
             "main": "./lib/actions/DeleteDBCluster.js",
-            "title": "<p>Deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.</p> <p/>",
-            "description": "<p>Deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.</p> <p/>",
+            "title": "DeleteDBCluster",
+            "description": "Deletes a previously provisioned DB cluster. When you delete a DB cluster, all\nautomated backups for that DB cluster are deleted and can't be recovered. Manual\nDB cluster snapshots of the specified DB cluster are not deleted.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -208,7 +208,7 @@
         },
         "DeleteDBClusterParameterGroup": {
             "main": "./lib/actions/DeleteDBClusterParameterGroup.js",
-            "title": "Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated with any DB clusters.",
+            "title": "DeleteDBClusterParameterGroup",
             "description": "Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated with any DB clusters.",
             "fields": {
                 "verbose": {
@@ -225,8 +225,8 @@
         },
         "DeleteDBClusterSnapshot": {
             "main": "./lib/actions/DeleteDBClusterSnapshot.js",
-            "title": "<p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</p> </note>",
-            "description": "<p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</p> </note>",
+            "title": "DeleteDBClusterSnapshot",
+            "description": "Deletes a DB cluster snapshot. If the snapshot is being copied, the copy\noperation is terminated.\n\nThe DB cluster snapshot must be in the available state to be deleted.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -242,7 +242,7 @@
         },
         "DeleteDBInstance": {
             "main": "./lib/actions/DeleteDBInstance.js",
-            "title": "Deletes a previously provisioned DB instance. ",
+            "title": "DeleteDBInstance",
             "description": "Deletes a previously provisioned DB instance. ",
             "fields": {
                 "verbose": {
@@ -259,8 +259,8 @@
         },
         "DeleteDBSubnetGroup": {
             "main": "./lib/actions/DeleteDBSubnetGroup.js",
-            "title": "<p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group must not be associated with any DB instances.</p> </note>",
-            "description": "<p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group must not be associated with any DB instances.</p> </note>",
+            "title": "DeleteDBSubnetGroup",
+            "description": "Deletes a DB subnet group.\n\nThe specified database subnet group must not be associated with any DB\ninstances.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -276,7 +276,7 @@
         },
         "DescribeDBClusterParameterGroups": {
             "main": "./lib/actions/DescribeDBClusterParameterGroups.js",
-            "title": "Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the specified DB cluster parameter group. ",
+            "title": "DescribeDBClusterParameterGroups",
             "description": "Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the specified DB cluster parameter group. ",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "DescribeDBClusterParameters": {
             "main": "./lib/actions/DescribeDBClusterParameters.js",
-            "title": "Returns the detailed parameter list for a particular DB cluster parameter group.",
+            "title": "DescribeDBClusterParameters",
             "description": "Returns the detailed parameter list for a particular DB cluster parameter group.",
             "fields": {
                 "verbose": {
@@ -310,8 +310,8 @@
         },
         "DescribeDBClusterSnapshotAttributes": {
             "main": "./lib/actions/DescribeDBClusterSnapshotAttributes.js",
-            "title": "<p>Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.</p> <p>When you share snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code> attribute, then the manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.</p>",
-            "description": "<p>Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.</p> <p>When you share snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code> attribute, then the manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.</p>",
+            "title": "DescribeDBClusterSnapshotAttributes",
+            "description": "Returns a list of DB cluster snapshot attribute names and values for a manual DB\ncluster snapshot.\n\nWhen you share snapshots with other AWS accounts, \nDescribeDBClusterSnapshotAttributes returns the restore attribute and a list of\nIDs for the AWS accounts that are authorized to copy or restore the manual DB\ncluster snapshot. If all is included in the list of values for the restore \nattribute, then the manual DB cluster snapshot is public and can be copied or\nrestored by all AWS accounts.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -327,7 +327,7 @@
         },
         "DescribeDBClusterSnapshots": {
             "main": "./lib/actions/DescribeDBClusterSnapshots.js",
-            "title": "Returns information about DB cluster snapshots. This API operation supports pagination.",
+            "title": "DescribeDBClusterSnapshots",
             "description": "Returns information about DB cluster snapshots. This API operation supports pagination.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "DescribeDBClusters": {
             "main": "./lib/actions/DescribeDBClusters.js",
-            "title": "Returns information about provisioned Amazon DocumentDB DB clusters. This API operation supports pagination.",
+            "title": "DescribeDBClusters",
             "description": "Returns information about provisioned Amazon DocumentDB DB clusters. This API operation supports pagination.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "DescribeDBEngineVersions": {
             "main": "./lib/actions/DescribeDBEngineVersions.js",
-            "title": "Returns a list of the available DB engines.",
+            "title": "DescribeDBEngineVersions",
             "description": "Returns a list of the available DB engines.",
             "fields": {
                 "verbose": {
@@ -378,7 +378,7 @@
         },
         "DescribeDBInstances": {
             "main": "./lib/actions/DescribeDBInstances.js",
-            "title": "Returns information about provisioned Amazon DocumentDB instances. This API supports pagination.",
+            "title": "DescribeDBInstances",
             "description": "Returns information about provisioned Amazon DocumentDB instances. This API supports pagination.",
             "fields": {
                 "verbose": {
@@ -395,7 +395,7 @@
         },
         "DescribeDBSubnetGroups": {
             "main": "./lib/actions/DescribeDBSubnetGroups.js",
-            "title": "Returns a list of <code>DBSubnetGroup</code> descriptions. If a <code>DBSubnetGroupName</code> is specified, the list will contain only the descriptions of the specified <code>DBSubnetGroup</code>.",
+            "title": "DescribeDBSubnetGroups",
             "description": "Returns a list of <code>DBSubnetGroup</code> descriptions. If a <code>DBSubnetGroupName</code> is specified, the list will contain only the descriptions of the specified <code>DBSubnetGroup</code>.",
             "fields": {
                 "verbose": {
@@ -412,7 +412,7 @@
         },
         "DescribeEngineDefaultClusterParameters": {
             "main": "./lib/actions/DescribeEngineDefaultClusterParameters.js",
-            "title": "Returns the default engine and system parameter information for the cluster database engine.",
+            "title": "DescribeEngineDefaultClusterParameters",
             "description": "Returns the default engine and system parameter information for the cluster database engine.",
             "fields": {
                 "verbose": {
@@ -429,7 +429,7 @@
         },
         "DescribeEventCategories": {
             "main": "./lib/actions/DescribeEventCategories.js",
-            "title": "Displays a list of categories for all event source types, or, if specified, for a specified source type. ",
+            "title": "DescribeEventCategories",
             "description": "Displays a list of categories for all event source types, or, if specified, for a specified source type. ",
             "fields": {
                 "verbose": {
@@ -446,7 +446,7 @@
         },
         "DescribeEvents": {
             "main": "./lib/actions/DescribeEvents.js",
-            "title": "Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. You can obtain events specific to a particular DB instance, DB security group, DB snapshot, or DB parameter group by providing the name as a parameter. By default, the events of the past hour are returned.",
+            "title": "DescribeEvents",
             "description": "Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. You can obtain events specific to a particular DB instance, DB security group, DB snapshot, or DB parameter group by providing the name as a parameter. By default, the events of the past hour are returned.",
             "fields": {
                 "verbose": {
@@ -463,7 +463,7 @@
         },
         "DescribeOrderableDBInstanceOptions": {
             "main": "./lib/actions/DescribeOrderableDBInstanceOptions.js",
-            "title": "Returns a list of orderable DB instance options for the specified engine.",
+            "title": "DescribeOrderableDBInstanceOptions",
             "description": "Returns a list of orderable DB instance options for the specified engine.",
             "fields": {
                 "verbose": {
@@ -480,7 +480,7 @@
         },
         "DescribePendingMaintenanceActions": {
             "main": "./lib/actions/DescribePendingMaintenanceActions.js",
-            "title": "Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.",
+            "title": "DescribePendingMaintenanceActions",
             "description": "Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.",
             "fields": {
                 "verbose": {
@@ -497,8 +497,8 @@
         },
         "FailoverDBCluster": {
             "main": "./lib/actions/FailoverDBCluster.js",
-            "title": "<p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster promotes one of the Amazon DocumentDB replicas (read-only instances) in the DB cluster to be the primary instance (the cluster writer).</p> <p>If the primary instance fails, Amazon DocumentDB automatically fails over to an Amazon DocumentDB replica, if one exists. You can force a failover when you want to simulate a failure of a primary instance for testing.</p>",
-            "description": "<p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster promotes one of the Amazon DocumentDB replicas (read-only instances) in the DB cluster to be the primary instance (the cluster writer).</p> <p>If the primary instance fails, Amazon DocumentDB automatically fails over to an Amazon DocumentDB replica, if one exists. You can force a failover when you want to simulate a failure of a primary instance for testing.</p>",
+            "title": "FailoverDBCluster",
+            "description": "Forces a failover for a DB cluster.\n\nA failover for a DB cluster promotes one of the Amazon DocumentDB replicas\n(read-only instances) in the DB cluster to be the primary instance (the cluster\nwriter).\n\nIf the primary instance fails, Amazon DocumentDB automatically fails over to an\nAmazon DocumentDB replica, if one exists. You can force a failover when you want\nto simulate a failure of a primary instance for testing.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -514,7 +514,7 @@
         },
         "ListTagsForResource": {
             "main": "./lib/actions/ListTagsForResource.js",
-            "title": "Lists all tags on an Amazon DocumentDB resource.",
+            "title": "ListTagsForResource",
             "description": "Lists all tags on an Amazon DocumentDB resource.",
             "fields": {
                 "verbose": {
@@ -531,7 +531,7 @@
         },
         "ModifyDBCluster": {
             "main": "./lib/actions/ModifyDBCluster.js",
-            "title": "Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. ",
+            "title": "ModifyDBCluster",
             "description": "Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. ",
             "fields": {
                 "verbose": {
@@ -548,8 +548,8 @@
         },
         "ModifyDBClusterParameterGroup": {
             "main": "./lib/actions/ModifyDBClusterParameterGroup.js",
-            "title": "<p> Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request. </p> <note> <p>Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot or maintenance window before the change can take effect.</p> </note> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the parameter group is used as the default for a new DB cluster. This step is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter.</p> </important>",
-            "description": "<p> Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request. </p> <note> <p>Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot or maintenance window before the change can take effect.</p> </note> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully complete the create action before the parameter group is used as the default for a new DB cluster. This step is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter.</p> </important>",
+            "title": "ModifyDBClusterParameterGroup",
+            "description": " Modifies the parameters of a DB cluster parameter group. To modify more than\none parameter, submit a list of the following: ParameterName, ParameterValue,\nand ApplyMethod. A maximum of 20 parameters can be modified in a single request. \n\nChanges to dynamic parameters are applied immediately. Changes to static\nparameters require a reboot or maintenance window before the change can take\neffect.\n\nAfter you create a DB cluster parameter group, you should wait at least 5\nminutes before creating your first DB cluster that uses that DB cluster\nparameter group as the default parameter group. This allows Amazon DocumentDB to\nfully complete the create action before the parameter group is used as the\ndefault for a new DB cluster. This step is especially important for parameters\nthat are critical when creating the default database for a DB cluster, such as\nthe character set for the default database defined by the character_set_database \nparameter.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -565,8 +565,8 @@
         },
         "ModifyDBClusterSnapshotAttribute": {
             "main": "./lib/actions/ModifyDBClusterSnapshotAttribute.js",
-            "title": "<p>Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.</p> <p>To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that parameter in this case.</p>",
-            "description": "<p>Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.</p> <p>To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that parameter in this case.</p>",
+            "title": "ModifyDBClusterSnapshotAttribute",
+            "description": "Adds an attribute and values to, or removes an attribute and values from, a\nmanual DB cluster snapshot.\n\nTo share a manual DB cluster snapshot with other AWS accounts, specify restore \nas the AttributeName, and use the ValuesToAdd parameter to add a list of IDs of\nthe AWS accounts that are authorized to restore the manual DB cluster snapshot.\nUse the value all to make the manual DB cluster snapshot public, which means\nthat it can be copied or restored by all AWS accounts. Do not add the all value\nfor any manual DB cluster snapshots that contain private information that you\ndon't want available to all AWS accounts. If a manual DB cluster snapshot is\nencrypted, it can be shared, but only by specifying a list of authorized AWS\naccount IDs for the ValuesToAdd parameter. You can't use all as a value for that\nparameter in this case.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -582,7 +582,7 @@
         },
         "ModifyDBInstance": {
             "main": "./lib/actions/ModifyDBInstance.js",
-            "title": "Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request.",
+            "title": "ModifyDBInstance",
             "description": "Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request.",
             "fields": {
                 "verbose": {
@@ -599,7 +599,7 @@
         },
         "ModifyDBSubnetGroup": {
             "main": "./lib/actions/ModifyDBSubnetGroup.js",
-            "title": "Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two Availability Zones in the AWS Region.",
+            "title": "ModifyDBSubnetGroup",
             "description": "Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two Availability Zones in the AWS Region.",
             "fields": {
                 "verbose": {
@@ -616,8 +616,8 @@
         },
         "RebootDBInstance": {
             "main": "./lib/actions/RebootDBInstance.js",
-            "title": "<p>You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain changes, or if you change the DB cluster parameter group that is associated with the DB instance, you must reboot the instance for the changes to take effect. </p> <p>Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary outage, during which the DB instance status is set to <i>rebooting</i>. </p>",
-            "description": "<p>You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain changes, or if you change the DB cluster parameter group that is associated with the DB instance, you must reboot the instance for the changes to take effect. </p> <p>Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary outage, during which the DB instance status is set to <i>rebooting</i>. </p>",
+            "title": "RebootDBInstance",
+            "description": "You might need to reboot your DB instance, usually for maintenance reasons. For\nexample, if you make certain changes, or if you change the DB cluster parameter\ngroup that is associated with the DB instance, you must reboot the instance for\nthe changes to take effect. \n\nRebooting a DB instance restarts the database engine service. Rebooting a DB\ninstance results in a momentary outage, during which the DB instance status is\nset to rebooting.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -633,7 +633,7 @@
         },
         "RemoveTagsFromResource": {
             "main": "./lib/actions/RemoveTagsFromResource.js",
-            "title": "Removes metadata tags from an Amazon DocumentDB resource.",
+            "title": "RemoveTagsFromResource",
             "description": "Removes metadata tags from an Amazon DocumentDB resource.",
             "fields": {
                 "verbose": {
@@ -650,8 +650,8 @@
         },
         "ResetDBClusterParameterGroup": {
             "main": "./lib/actions/ResetDBClusterParameterGroup.js",
-            "title": "<p> Modifies the parameters of a DB cluster parameter group to the default value. To reset specific parameters, submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters. </p> <p> When you reset the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance reboot.</p>",
-            "description": "<p> Modifies the parameters of a DB cluster parameter group to the default value. To reset specific parameters, submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters. </p> <p> When you reset the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance reboot.</p>",
+            "title": "ResetDBClusterParameterGroup",
+            "description": " Modifies the parameters of a DB cluster parameter group to the default value.\nTo reset specific parameters, submit a list of the following: ParameterName and \nApplyMethod. To reset the entire DB cluster parameter group, specify the \nDBClusterParameterGroupName and ResetAllParameters parameters. \n\n When you reset the entire group, dynamic parameters are updated immediately and\nstatic parameters are set to pending-reboot to take effect on the next DB\ninstance reboot.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -667,8 +667,8 @@
         },
         "RestoreDBClusterFromSnapshot": {
             "main": "./lib/actions/RestoreDBClusterFromSnapshot.js",
-            "title": "<p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default configuration and default security group.</p> <p>If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group.</p>",
-            "description": "<p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default configuration and default security group.</p> <p>If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group.</p>",
+            "title": "RestoreDBClusterFromSnapshot",
+            "description": "Creates a new DB cluster from a DB snapshot or DB cluster snapshot.\n\nIf a DB snapshot is specified, the target DB cluster is created from the source\nDB snapshot with a default configuration and default security group.\n\nIf a DB cluster snapshot is specified, the target DB cluster is created from the\nsource DB cluster restore point with the same configuration as the original\nsource DB cluster, except that the new DB cluster is created with the default\nsecurity group.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -684,7 +684,7 @@
         },
         "RestoreDBClusterToPointInTime": {
             "main": "./lib/actions/RestoreDBClusterToPointInTime.js",
-            "title": "Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group. ",
+            "title": "RestoreDBClusterToPointInTime",
             "description": "Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group. ",
             "fields": {
                 "verbose": {
